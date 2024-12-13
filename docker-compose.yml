@@ -3,6 +3,7 @@ services:
   app:
     build: .
     volumes:
-      - .:/app
+      - ./config.json:/app/config.json
+
     ports:
       - "3000:3000"

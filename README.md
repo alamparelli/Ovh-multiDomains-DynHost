@@ -4,7 +4,9 @@
 
 OVH DynHost Sync is a tool that automates the synchronization of your OVH DynHost configurations with your current IPv4 address. It ensures your DNS records are always up-to-date without manual updates.
 
-## Setup
+## Installation
+
+### Standard Setup
 
 1. Ensure `config.json` exists in the root directory (refer to the `config.json.example`). If not, create it with the following content:
 
@@ -19,6 +21,26 @@ OVH DynHost Sync is a tool that automates the synchronization of your OVH DynHos
 3. Provide the necessary OVH credentials through the web interface.
 4. Use the "Save Configurations" button to save your settings without performing an immediate update.
 5. The application will automatically update the DynHost configurations at the specified intervals.
+
+### Docker Setup
+
+1. Make sure you have Docker and Docker Compose installed on your system.
+
+2. Create a `config.json` file in the project root directory (see Configuration section below).
+
+3. Start the application using Docker Compose:
+
+    ```bash
+    docker-compose up -d
+    ```
+
+4. Access the web interface at `http://localhost:3000`
+
+5. The container will automatically restart unless stopped manually. To stop:
+
+    ```bash
+    docker-compose down
+    ```
 
 ## Configuration
 
