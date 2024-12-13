@@ -1,7 +1,7 @@
 {
-  "name": "workspace-blank",
+  "name": "ovh-dynhost",
   "version": "1.0.0",
-  "description": "This repository is empty. Any task executed on it should be considered a new capability and needs to be created.",
+  "description": "dynamic multidomain ovh dynhost",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
