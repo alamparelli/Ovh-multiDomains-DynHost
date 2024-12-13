@@ -2,13 +2,15 @@
 
 ## Introduction
 
-OVH DynHost Sync is a tool that automates the synchronization of your OVH DynHost configurations with your current IPv4 address. It ensures your DNS records are always up-to-date without manual updates.
+OVH DynHost Sync is a tool that automates the synchronization of your OVH DynHost Domains configurations with your current IPv4 address. It ensures your DNS records are always up-to-date without manual updates.
+
+It supports multiple domains and allows you to configure the update interval. The application fetches your current IP address and updates the DynHost settings accordingly.
 
 ## Installation
 
 ### Standard Setup
 
-1. Ensure `config.json` exists in the root directory (refer to the `config.json.example`). If not, create it with the following content:
+1. Ensure `config.json` exists in the root directory (). If not, create it with the following content:
 
     ```json
     {
