@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OVH DynHost Sync</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light">
+  <div class="container">
+    <div class="header text-center my-5">
+      <h1 class="display-4"><i class="fas fa-sync"></i> OVH DynHost Sync</h1>
+      <p class="lead text-muted">Manage your dynamic DNS configurations</p>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+      <div class="card-body">
+        <div id="current-ip" class="alert alert-info">
+          <i class="fas fa-network-wired"></i> Fetching current IP...
+        </div>
+        <form id="dynhost-form">
+          <div id="domains-container">
+            <!-- Domain groups will be inserted here -->
+          </div>
+          
+          <div class="button-group mt-4">
+            <button type="button" class="btn btn-outline-primary" id="add-domain">
+              <i class="fas fa-plus"></i> Add Domain
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-sync"></i> Update DynHost
+            </button>
+            <button type="button" class="btn btn-success" id="save-config">
+              <i class="fas fa-save"></i> Save Configurations
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="status" class="alert d-none"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
