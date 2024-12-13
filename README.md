@@ -6,6 +6,8 @@ OVH DynHost Sync is a tool that automates the synchronization of your OVH DynHos
 
 It supports multiple domains and allows you to configure the update interval. The application fetches your current IP address and updates the DynHost settings accordingly.
 
+![alt text](images/webInterface.jpeg)
+
 ## Installation
 
 ### Standard Setup
@@ -43,6 +45,48 @@ It supports multiple domains and allows you to configure the update interval. Th
     ```bash
     docker-compose down
     ```
+
+## Docker Image
+
+The application is available as a Docker image from GitHub Container Registry. You can run it in several ways:
+
+### Using Docker Run
+
+```bash
+# Pull the image
+docker pull ghcr.io/USERNAME/ovh-sync:latest
+
+# Run with config file mounted
+docker run -d \
+  -p 127.0.0.1:3000:3000 \
+  -v $(pwd)/config.json:/app/config.json \
+  ghcr.io/alamparelli/ovh-sync:latest
+```
+
+### Using Docker Compose
+
+Create a `docker-compose.yml` file:
+
+```yaml
+services:
+  ovh-sync:
+    image: ghcr.io/alamparelli/ovh-sync:latest
+    volumes:
+      - ./config.json:/app/config.json
+    ports:
+      - "127.0.0.1:3000:3000"
+    restart: unless-stopped
+```
+
+Then run:
+
+```bash
+docker-compose up -d
+```
+
+Replace `USERNAME` with your GitHub username in all examples.
+
+The web interface will be available at `http://localhost:3000` or to the Ip of your server
 
 ## Configuration
 
