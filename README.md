@@ -54,13 +54,13 @@ The application is available as a Docker image from GitHub Container Registry. Y
 
 ```bash
 # Pull the image
-docker pull ghcr.io/USERNAME/ovh-sync:latest
+docker pull ghcr.io/alamparelli/ovh-multidomains-dynhost:latest
 
 # Run with config file mounted
 docker run -d \
   -p 127.0.0.1:3000:3000 \
   -v $(pwd)/config.json:/app/config.json \
-  ghcr.io/alamparelli/ovh-sync:latest
+  ghcr.io/alamparelli/ovh-multidomains-dynhost:latest
 ```
 
 ### Using Docker Compose
@@ -70,7 +70,7 @@ Create a `docker-compose.yml` file:
 ```yaml
 services:
   ovh-sync:
-    image: ghcr.io/alamparelli/ovh-sync:latest
+    image: ghcr.io/alamparelli/ovh-multidomains-dynhost:latest
     volumes:
       - ./config.json:/app/config.json
     ports:
